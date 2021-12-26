@@ -14,12 +14,17 @@ public class DemoApp {
         var dataSource = initializeDataSource();
         var sessionFactory = new SessionFactory(dataSource);
         var session = sessionFactory.createSession();
+
         var person = session.find(Person.class, 1L);
         System.out.println(person);
 
         var theSamePerson = session.find(Person.class, 1L);
         System.out.println(theSamePerson);
         System.out.println(person == theSamePerson);
+        person.setFirstName("Changed");
+
+
+        session.close();
 
     }
 
