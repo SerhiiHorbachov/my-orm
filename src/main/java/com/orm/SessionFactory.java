@@ -1,7 +1,6 @@
 package com.orm;
 
 
-import com.orm.Session;
 import lombok.RequiredArgsConstructor;
 
 import javax.sql.DataSource;
@@ -10,7 +9,7 @@ import javax.sql.DataSource;
 public class SessionFactory {
     private final DataSource dataSource;
 
-    public Session createSession(){
+    public Session createSession() {
         return new Session(dataSource);
     }
 }

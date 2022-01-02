@@ -8,8 +8,6 @@ import javax.sql.DataSource;
 
 public class DemoApp {
 
-//    private static EntityManagerFactory emf;
-
     public static void main(String[] args) {
         var dataSource = initializeDataSource();
         var sessionFactory = new SessionFactory(dataSource);
@@ -21,8 +19,7 @@ public class DemoApp {
         var theSamePerson = session.find(Person.class, 1L);
         System.out.println(theSamePerson);
         System.out.println(person == theSamePerson);
-        person.setFirstName("Changed");
-
+        person.setFirstName("Changed_Name");
 
         session.close();
 
