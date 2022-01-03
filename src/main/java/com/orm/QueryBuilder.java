@@ -32,7 +32,6 @@ public class QueryBuilder {
         }
         String query = queryBuilder.substring(0, queryBuilder.length() - 2);
 
-
         return String.format(UPDATE_TEMPLATE, defineTableName(type), query);
     }
 

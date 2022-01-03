@@ -68,7 +68,7 @@ public class Session {
         resultSet.next();
 
         var entity = entityType.getConstructor().newInstance();
-        final Field[] sortedDeclaredFields = Arrays.stream(entityType.getDeclaredFields())
+        Field[] sortedDeclaredFields = Arrays.stream(entityType.getDeclaredFields())
             .sorted(Comparator.comparing(Field::getName)).toArray(Field[]::new);
 
         for (int i = 0; i < sortedDeclaredFields.length; i++) {
@@ -101,7 +101,6 @@ public class Session {
                 statement.executeUpdate();
             }
         }
-
     }
 
     @SneakyThrows
